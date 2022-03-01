@@ -2,8 +2,8 @@
 
 require_once __DIR__."/Programmazione.php";
 class Sala {
-    private $nome;
-    private $capienza;
+    protected $nome;
+    protected $capienza;
 
     public function __construct($_nome, $_capienza){
         $this->nome = $_nome;
@@ -11,11 +11,13 @@ class Sala {
 
     }
     public function getInfo(){
-        return [
-            $this->$nome,
-            $this->$capienza 
-        ];
+        return "Nome: {$this->nome} Capienza: {$this->capienza}"; 
     }
+
+    public function getTotCapienza(){
+        return $this->capienza;
+    }
+
 }
 
 ?>

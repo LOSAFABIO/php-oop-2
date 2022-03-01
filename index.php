@@ -29,8 +29,8 @@ $attoriArr = [
 $saleArr = [
     new Sala("A", 80),
     new Sala("B", 60),
-    new SalaPlus("C", 80, "vibro"),
-    new SalaPlus("D", 100, "fumo"),
+    new SalaPlus("C", 80, ["vibro"]),
+    new SalaPlus("D", 100, ["fumo"]),
 
 ];
 
@@ -44,14 +44,27 @@ array_push($filmArr[0]->attori,$attoriArr[0]);
 array_push($filmArr[1]->attori,$attoriArr[1]);
 array_push($filmArr[2]->attori,$attoriArr[2]);
 
-var_dump($filmArr);
-var_dump($saleArr);
-var_dump($progrArr);
+// var_dump($filmArr);
+// var_dump($saleArr);
+// var_dump($progrArr);
+//milestone 1
+foreach ($saleArr as $elemento) {
+    echo "{$elemento->getInfo()} <br>";
+ }
+ 
+//milestone 2
 
-$totCapienza = 0;
 foreach ($saleArr as $capienza) {
-   $totCapienza += $capienza->getInfo()[1];
+   $capienzaTot += $capienza->getTotCapienza(); 
+   echo $capienzaTot;
 }
+
+//milestone 3
+
+
+//milestone 4
+
+
 
 ?>
 
@@ -66,8 +79,5 @@ foreach ($saleArr as $capienza) {
     <title>php-oop-2</title>
 </head>
 <body>
-    <?php 
-
-    ?>
 </body>
 </html>
