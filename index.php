@@ -47,19 +47,22 @@ array_push($filmArr[2]->attori,$attoriArr[2]);
 // var_dump($filmArr);
 // var_dump($saleArr);
 // var_dump($progrArr);
+
 //milestone 1
 foreach ($saleArr as $elemento) {
     echo "{$elemento->getInfo()} <br>";
  }
  
 //milestone 2
+$capienzaTot = 0;
 
 foreach ($saleArr as $capienza) {
    $capienzaTot += $capienza->getTotCapienza(); 
-   echo $capienzaTot;
 }
+echo $capienzaTot;
 
 //milestone 3
+
 
 
 //milestone 4
