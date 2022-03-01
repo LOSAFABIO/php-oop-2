@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__."/Programmazione.php";
 class Sala {
     private $nome;
     private $capienza;
@@ -9,7 +10,12 @@ class Sala {
         $this->capienza = $_capienza;
 
     }
+    public function getInfo(){
+        return [
+            $this->$nome,
+            $this->$capienza 
+        ];
+    }
 }
-
 
 ?>

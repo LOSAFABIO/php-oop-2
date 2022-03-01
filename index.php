@@ -13,20 +13,31 @@ require_once __DIR__."/classi/SalaPlus.php";
 
 
 $filmArr = [
-        new Film("A Beautiful Mind", "Dramma", "136", "2001"),
+    new Film("A Beautiful Mind", "Dramma", "136", "2001"),
+    new Film("Kaan principe guerriero", "Azione", "118", "1982"),
+    new Film("X-Men", "Fantascienza", "104", "2000")
+];
     
-        new Film("Kaan principe guerriero", "Azione", "118", "1982"),
-    
-        new Film("X-Men", "Fantascienza", "104", "2000")
-    ];
-    
-    
+
 $attoriArr = [
-        new Attori("fabio", "losa", "italia"),
+    new Attori("fabio", "losa", "italia"),
+    new Attori("marco", "rota", "italia"),
+    new Attori("luca", "rossi", "spagna")
+];
 
-        new Attori("marco", "rota", "italia"),
 
-        new Attori("luca", "rossi", "spagna")
+$saleArr = [
+    new Sala("A", 80),
+    new Sala("B", 60),
+    new SalaPlus("C", 80, "vibro"),
+    new SalaPlus("D", 100, "fumo"),
+
+];
+
+$progrArr = [
+    new Programmazione("12-06", "21.00"),
+    new Programmazione("13-06", "19.30"),
+    new Programmazione("30-05", "20.00")
 ];
 
 array_push($filmArr[0]->attori,$attoriArr[0]);
@@ -34,6 +45,13 @@ array_push($filmArr[1]->attori,$attoriArr[1]);
 array_push($filmArr[2]->attori,$attoriArr[2]);
 
 var_dump($filmArr);
+var_dump($saleArr);
+var_dump($progrArr);
+
+$totCapienza = 0;
+foreach ($saleArr as $capienza) {
+   $totCapienza += $capienza->getInfo()[1];
+}
 
 ?>
 
@@ -48,7 +66,8 @@ var_dump($filmArr);
     <title>php-oop-2</title>
 </head>
 <body>
-    
+    <?php 
 
+    ?>
 </body>
 </html>
