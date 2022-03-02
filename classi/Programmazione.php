@@ -8,6 +8,10 @@ class Programmazione {
         $this->data = $_data;
         $this->orario = $_orario;
     }
+    public function getGiorno(){
+        return $this->data;
+    }
+
 }
 
 ?>

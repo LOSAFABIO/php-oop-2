@@ -15,6 +15,10 @@ class Film  {
         $this->durata = $_durata;
         $this->anno = $_anno;
     }
+    public function getTitle(){
+        return $this->titolo;
+    }
+
 }
 
 ?>

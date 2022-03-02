@@ -6,6 +6,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require_once __DIR__."/classi/Spettacolo.php"; 
 require_once __DIR__."/classi/Film.php"; 
 require_once __DIR__."/classi/Programmazione.php"; 
 require_once __DIR__."/classi/Sala.php"; 
@@ -35,9 +36,9 @@ $saleArr = [
 ];
 
 $progrArr = [
-    new Programmazione("12-06", "21.00"),
-    new Programmazione("13-06", "19.30"),
-    new Programmazione("30-05", "20.00")
+    new Programmazione("sabato", "21.00"),
+    new Programmazione("domenica", "19.30"),
+    new Programmazione("mercoledi", "20.00")
 ];
 
 array_push($filmArr[0]->attori,$attoriArr[0]);
@@ -63,7 +64,20 @@ echo $capienzaTot;
 
 //milestone 3
 
+$spettacoliArr = [
+    new Spettacolo($filmArr[0],$progrArr[0])
+];
 
+$num_spettacoli = 0;
+// $giorno = "sabato";
+// $film ="X-Men";
+foreach ($spettacoliArr as $element){
+    if($element->getGiorno() == "sabato" && $element->getTitle() == "A Beautiful Mind"){
+        $num_spettacoli++;
+    }
+}
+echo "<br> $num_spettacoli";
+// echo $num_spettacoli
 
 //milestone 4
 

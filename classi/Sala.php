@@ -17,6 +17,10 @@ class Sala {
     public function getTotCapienza(){
         return $this->capienza;
     }
+    public function getSala(){
+        return $this->nome;
+    }
+
 
 }
 
